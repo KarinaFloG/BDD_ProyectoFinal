@@ -52,29 +52,35 @@ begin
 	select count(*) 
 	into v_count 
 	from user_indexes
-	where table_name = name;
+	where index_name = name;
 	
 	if (v_count > 0) then
        		execute immediate 'drop index ' || name ||;
 	end if;
 end;
 /
+show errors;
 
 declare
-    v_historico_status_laptop_f1_ahg_s2 varchar2(40)        := 'HISTORICO_STATUS_LAPTOP_F1_AHG_S2';
+    v_historico_status_f1_ix varchar2(30) := 'HISTORICO_STATUS_F1_IX';
+    v_laptop_proc_f5_ix varchar2(30) := 'LAPTOP_PROC_F5_IX';
+    v_laptop_tarjeta_f5_ix varchar2(30) := 'LAPTOP_TARJETA_F5_IX';
+    v_laptop_almacenamiento_f5_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F5_IX';
+    v_laptop_monitor_f5_ix varchar2(30) := 'LAPTOP_MONITOR_F5_IX';
+    v_servicio_lap_suc_f2_ix varchar2(30) := 'SERVICIO_LAP_SUC_F2_IX';
+    v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F2_IX';
+    v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F2_IX';
 
 begin
-	drop_table_if_exists(v_historico_status_laptop_f1_ahg_s2);
-	drop_table_if_exists(v_status_laptop);
-	drop_table_if_exists(v_tipo_procesador_r_ahg_s2);
-	drop_table_if_exists(v_tipo_tarjeta_video_r_ahg_s2);
-	drop_table_if_exists(v_tipo_almacenamiento_r_ahg_s2);
-	drop_table_if_exists(v_tipo_monitor_r_ahg_s2);
-	drop_table_if_exists(v_laptop_f5_ahg_s2);
-	drop_table_if_exists(v_sucursal_f2_ahg_s2);
-    drop_table_if_exists(v_sucursal_taller_f2_ahg_s2);
-    drop_table_if_exists(v_sucursal_venta_f2_ahg_s2);
-    drop_table_if_exists(v_servicio_laptop_f2_ahg_s2);
+	drop_index_if_exists(v_historico_status_f1_ix);
+    drop_index_if_exists(v_laptop_proc_f5_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f5_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f5_ix);
+    drop_index_if_exists(v_laptop_monitor_f5_ix);
+    drop_index_if_exists(v_servicio_lap_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_taller_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_venta_suc_f2_ix);
+
 end;
 /
 
