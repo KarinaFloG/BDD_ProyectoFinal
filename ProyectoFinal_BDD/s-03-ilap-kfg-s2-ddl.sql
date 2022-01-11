@@ -45,6 +45,50 @@ begin
 end;
 /
 
+create or replace procedure drop_index_if_exists(name in varchar2) is
+	v_count number;
+begin
+	select count(*) 
+	into v_count 
+	from user_indexes
+	where index_name = name;
+	
+	if (v_count > 0) then
+       		execute immediate 'drop index ' || name ||;
+	end if;
+end;
+/
+show errors;
+
+declare
+    v_laptop_proc_f1_ix varchar2(30) := 'LAPTOP_PROC_F1_IX';
+    v_laptop_tarjeta_f1_ix varchar2(30) := 'LAPTOP_TARJETA_F1_IX';
+    v_laptop_almacenamiento_f1_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F1_IX';
+    v_laptop_monitor_f1_ix varchar2(30) := 'LAPTOP_MONITOR_F1_IX';
+    v_laptop_proc_f3_ix varchar2(30) := 'LAPTOP_PROC_F3_IX';
+    v_laptop_tarjeta_f3_ix varchar2(30) := 'LAPTOP_TARJETA_F3_IX';
+    v_laptop_almacenamiento_f3_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F3_IX';
+    v_laptop_monitor_f3_ix varchar2(30) := 'LAPTOP_MONITOR_F3_IX';
+    v_servicio_lap_suc_f4_ix varchar2(30) := 'SERVICIO_LAP_SUC_F4_IX';
+    v_sucursal_taller_suc_f4_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F4_IX';
+    v_sucursal_venta_suc_f4_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F4_IX';
+
+begin
+	drop_index_if_exists(v_laptop_proc_f1_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f1_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f1_ix);
+    drop_index_if_exists(v_laptop_monitor_f1_ix);
+    drop_index_if_exists(v_laptop_proc_f3_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f3_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f3_ix);
+    drop_index_if_exists(v_laptop_monitor_f3_ix);
+    drop_index_if_exists(v_servicio_lap_suc_f4_ix);
+    drop_index_if_exists(v_sucursal_taller_suc_f4_ix);
+    drop_index_if_exists(v_sucursal_venta_suc_f4_ix);
+
+end;
+/
+
 --
 -- ER/Studio 8.0 SQL Code Generation
 -- Company :      KAR

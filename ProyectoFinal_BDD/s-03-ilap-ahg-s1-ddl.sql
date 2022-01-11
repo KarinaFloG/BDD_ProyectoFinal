@@ -17,10 +17,9 @@ begin
 	end if;
 end;
 /
-
 declare
     v_status_laptop varchar2(30) 	            := 'STATUS_LAPTOP';
-    v_historico_status_laptop_f2_ahg_s1 varchar2(30) := 'HISTORICO_STATUS_LAPTOP_F1_AHG_S1';
+    v_historico_status_laptop_f2_ahg_s1 varchar2(40) := 'HISTORICO_STATUS_LAPTOP_F2_AHG_S1';
     v_tipo_procesador_r_ahg_s1 varchar2(30)     := 'TIPO_PROCESADOR_R_AHG_S1';
 	v_tipo_tarjeta_video_r_ahg_s1 varchar2(30)	:= 'TIPO_TARJETA_VIDEO_R_AHG_S1';
 	v_tipo_almacenamiento_r_ahg_s1 varchar2(30) := 'TIPO_ALMACENAMIENTO_R_AHG_S1';
@@ -46,6 +45,46 @@ begin
     drop_table_if_exists(v_servicio_laptop_f1_ahg_s1);
 end;
 /
+
+
+create or replace procedure drop_index_if_exists(name in varchar2) is
+	v_count number;
+begin
+	select count(*) 
+	into v_count 
+	from user_indexes
+	where index_name = name;
+	
+	if (v_count > 0) then
+       		execute immediate 'drop index ' || name ||;
+	end if;
+end;
+/
+show errors;
+
+declare
+    v_historico_status_f2_ix varchar2(30) := 'HISTORICO_STATUS_F2_IX';
+    v_laptop_proc_f2_ix varchar2(30) := 'LAPTOP_PROC_F2_IX';
+    v_laptop_tarjeta_f2_ix varchar2(30) := 'LAPTOP_TARJETA_F2_IX';
+    v_laptop_almacenamiento_f2_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F2_IX';
+    v_laptop_monitor_f2_ix varchar2(30) := 'LAPTOP_MONITOR_F2_IX';
+    v_servicio_lap_suc_f1_ix varchar2(30) := 'SERVICIO_LAP_SUC_F1_IX';
+    v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F1_IX';
+    v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F1_IX';
+
+begin
+	drop_index_if_exists(v_historico_status_f2_ix);
+    drop_index_if_exists(v_laptop_proc_f2_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f2_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f2_ix);
+    drop_index_if_exists(v_laptop_monitor_f2_ix);
+    drop_index_if_exists(v_servicio_lap_suc_f1_ix);
+    drop_index_if_exists(v_sucursal_taller_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_venta_suc_f2_ix);
+
+end;
+/
+
 
 --
 -- ER/Studio 8.0 SQL Code Generation

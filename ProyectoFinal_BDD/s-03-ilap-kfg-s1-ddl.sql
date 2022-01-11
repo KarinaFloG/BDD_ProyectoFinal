@@ -44,6 +44,45 @@ begin
 end;
 /
 
+create or replace procedure drop_index_if_exists(name in varchar2) is
+	v_count number;
+begin
+	select count(*) 
+	into v_count 
+	from user_indexes
+	where index_name = name;
+	
+	if (v_count > 0) then
+       		execute immediate 'drop index ' || name ||;
+	end if;
+end;
+/
+show errors;
+
+declare
+    
+    v_laptop_proc_f4_ix varchar2(30) := 'LAPTOP_PROC_F4_IX';
+    v_laptop_tarjeta_f4_ix varchar2(30) := 'LAPTOP_TARJETA_F4_IX';
+    v_laptop_almacenamiento_f4_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F4_IX';
+    v_laptop_monitor_f4_ix varchar2(30) := 'LAPTOP_MONITOR_F4_IX';
+    v_servicio_lap_suc_f1_ix varchar2(30) := 'SERVICIO_LAP_SUC_F3_IX';
+    v_laptop_inv_status_f1_ix varchar2(30) := 'LAPTOP_INV_STATUS_F1_IX';
+    v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F3_IX';
+    v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F3_IX';
+
+begin
+    drop_index_if_exists(v_laptop_proc_f2_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f2_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f2_ix);
+    drop_index_if_exists(v_laptop_monitor_f2_ix);
+    drop_index_if_exists(v_servicio_lap_suc_f1_ix);
+    drop_index_if_exists(v_laptop_inv_status_f1_ix);
+    drop_index_if_exists(v_sucursal_taller_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_venta_suc_f2_ix);
+
+end;
+/
+
 
 --
 -- ER/Studio 8.0 SQL Code Generation
@@ -245,47 +284,47 @@ CREATE TABLE SUCURSAL_VENTA_F3_KFG_S1(
 -- INDEX: Ref53 
 --
 
-CREATE or replace INDEX laptop_proc_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_PROCESADOR_ID)
+CREATE INDEX laptop_proc_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_PROCESADOR_ID)
 ;
 -- 
 -- INDEX: Ref64 
 --
 
-CREATE or replace INDEX laptop_tarjeta_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_TARJETA_VIDEO_ID)
+CREATE INDEX laptop_tarjeta_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_TARJETA_VIDEO_ID)
 ;
 -- 
 -- INDEX: Ref75 
 --
 
-CREATE or replace INDEX laptop_almacenamiento_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_ALMACENAMIENTO_ID)
+CREATE INDEX laptop_almacenamiento_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_ALMACENAMIENTO_ID)
 ;
 -- 
 -- INDEX: Ref86 
 --
 
-CREATE or replace INDEX laptop_monitor_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_MONITOR_ID)
+CREATE INDEX laptop_monitor_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_MONITOR_ID)
 ;
 -- 
 -- INDEX: Ref99 
 --
 
-CREATE or replace INDEX laptop_inv_status_f1_ix ON LAPTOP_INVENTARIO_F1_KFG_S1(STATUS_LAPTOP_ID)
+CREATE INDEX laptop_inv_status_f1_ix ON LAPTOP_INVENTARIO_F1_KFG_S1(STATUS_LAPTOP_ID)
 ;
 -- 
 -- INDEX: Ref27 
 --
 
-CREATE or replace INDEX servicio_lap_suc_f3_ix ON SERVICIO_LAPTOP_F3_KFG_S1(SUCURSAL_ID)
+CREATE INDEX servicio_lap_suc_f3_ix ON SERVICIO_LAPTOP_F3_KFG_S1(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref11 
 --
 
-CREATE or replace INDEX sucursal_taller_suc_f3_ix ON SUCURSAL_TALLER_F3_KFG_S1(SUCURSAL_ID)
+CREATE INDEX sucursal_taller_suc_f3_ix ON SUCURSAL_TALLER_F3_KFG_S1(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref12 
 --
 
-CREATE or replace INDEX sucursal_venta_suc_f3_ix ON SUCURSAL_VENTA_F3_KFG_S1(SUCURSAL_ID)
+CREATE INDEX sucursal_venta_suc_f3_ix ON SUCURSAL_VENTA_F3_KFG_S1(SUCURSAL_ID)
 ;

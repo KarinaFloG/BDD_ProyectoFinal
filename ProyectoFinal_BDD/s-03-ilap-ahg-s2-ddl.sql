@@ -19,7 +19,7 @@ end;
 /
 
 declare
-    v_historico_status_laptop_f1_ahg_s2 varchar2(30)        := 'HISTORICO_STATUS_LAPTOP_F1_AHG_S2';
+    v_historico_status_laptop_f1_ahg_s2 varchar2(40)        := 'HISTORICO_STATUS_LAPTOP_F1_AHG_S2';
     v_status_laptop varchar2(30) 	            := 'STATUS_LAPTOP';
     v_tipo_procesador_r_ahg_s2 varchar2(30)     := 'TIPO_PROCESADOR_R_AHG_S2';
 	v_tipo_tarjeta_video_r_ahg_s2 varchar2(30)	:= 'TIPO_TARJETA_VIDEO_R_AHG_S2';
@@ -31,17 +31,56 @@ declare
     v_sucursal_venta_f2_ahg_s2 varchar2(30) 	:= 'SUCURSAL_VENTA_F2_AHG_S2';
     v_servicio_laptop_f2_ahg_s2 varchar2(30) 	:= 'SERVICIO_LAPTOP_F2_AHG_S2';
 begin
-	drop_table_if_exists(v_tipo_procesador_r_kfg_s2);
-	drop_table_if_exists(v_tipo_tarjeta_video_r_kfg_s2;
-	drop_table_if_exists(v_tipo_almacenamiento_r_kfg_s2);
-	drop_table_if_exists(v_tipo_monitor_r_kfg_s2);
-	drop_table_if_exists(v_laptop_f1_kfg_s2);
-	drop_table_if_exists(v_laptop_f3_kfg_s2);
-	drop_table_if_exists(v_sucursal_f4_kfg_s2);
+	drop_table_if_exists(v_historico_status_laptop_f1_ahg_s2);
 	drop_table_if_exists(v_status_laptop);
-    drop_table_if_exists(v_sucursal_taller_f4_kfg_s2);
-    drop_table_if_exists(v_sucursal_venta_f4_kfg_s2);
-    drop_table_if_exists(v_servicio_laptop_f4_kfg_s2);
+	drop_table_if_exists(v_tipo_procesador_r_ahg_s2);
+	drop_table_if_exists(v_tipo_tarjeta_video_r_ahg_s2);
+	drop_table_if_exists(v_tipo_almacenamiento_r_ahg_s2);
+	drop_table_if_exists(v_tipo_monitor_r_ahg_s2);
+	drop_table_if_exists(v_laptop_f5_ahg_s2);
+	drop_table_if_exists(v_sucursal_f2_ahg_s2);
+    drop_table_if_exists(v_sucursal_taller_f2_ahg_s2);
+    drop_table_if_exists(v_sucursal_venta_f2_ahg_s2);
+    drop_table_if_exists(v_servicio_laptop_f2_ahg_s2);
+end;
+/
+
+
+create or replace procedure drop_index_if_exists(name in varchar2) is
+	v_count number;
+begin
+	select count(*) 
+	into v_count 
+	from user_indexes
+	where index_name = name;
+	
+	if (v_count > 0) then
+       		execute immediate 'drop index ' || name ||;
+	end if;
+end;
+/
+show errors;
+
+declare
+    v_historico_status_f1_ix varchar2(30) := 'HISTORICO_STATUS_F1_IX';
+    v_laptop_proc_f5_ix varchar2(30) := 'LAPTOP_PROC_F5_IX';
+    v_laptop_tarjeta_f5_ix varchar2(30) := 'LAPTOP_TARJETA_F5_IX';
+    v_laptop_almacenamiento_f5_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F5_IX';
+    v_laptop_monitor_f5_ix varchar2(30) := 'LAPTOP_MONITOR_F5_IX';
+    v_servicio_lap_suc_f2_ix varchar2(30) := 'SERVICIO_LAP_SUC_F2_IX';
+    v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F2_IX';
+    v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F2_IX';
+
+begin
+	drop_index_if_exists(v_historico_status_f1_ix);
+    drop_index_if_exists(v_laptop_proc_f5_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f5_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f5_ix);
+    drop_index_if_exists(v_laptop_monitor_f5_ix);
+    drop_index_if_exists(v_servicio_lap_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_taller_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_venta_suc_f2_ix);
+
 end;
 /
 
@@ -245,47 +284,47 @@ CREATE TABLE SUCURSAL_VENTA_F2_AHG_S2(
 -- INDEX: Ref108 
 --
 
-CREATE INDEX historico_status_f1_ix ON HISTORICO_STATUS_LAPTOP_F1_AHG_S2(STATUS_LAPTOP_ID)
+CREATE OR REPLACE INDEX historico_status_f1_ix ON HISTORICO_STATUS_LAPTOP_F1_AHG_S2(STATUS_LAPTOP_ID)
 ;
 -- 
 -- INDEX: Ref53 
 --
 
-CREATE INDEX laptop_proc_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_PROCESADOR_ID)
+CREATE OR REPLACE INDEX laptop_proc_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_PROCESADOR_ID)
 ;
 -- 
 -- INDEX: Ref64 
 --
 
-CREATE INDEX laptop_tarjeta_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_TARJETA_VIDEO_ID)
+CREATE OR REPLACE INDEX laptop_tarjeta_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_TARJETA_VIDEO_ID)
 ;
 -- 
 -- INDEX: Ref75 
 --
 
-CREATE INDEX laptop_almacenamiento_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_ALMACENAMIENTO_ID)
+CREATE OR REPLACE INDEX laptop_almacenamiento_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_ALMACENAMIENTO_ID)
 ;
 -- 
 -- INDEX: Ref86 
 --
 
-CREATE INDEX laptop_monitor_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_MONITOR_ID)
+CREATE OR REPLACE INDEX laptop_monitor_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_MONITOR_ID)
 ;
 -- 
 -- INDEX: Ref27 
 --
 
-CREATE INDEX servicio_lap_suc_f2_ix ON SERVICIO_LAPTOP_F2_AHG_S2(SUCURSAL_ID)
+CREATE OR REPLACE INDEX servicio_lap_suc_f2_ix ON SERVICIO_LAPTOP_F2_AHG_S2(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref11 
 --
 
-CREATE INDEX sucursal_taller_suc_f2_ix ON SUCURSAL_TALLER_F2_AHG_S2(SUCURSAL_ID)
+CREATE OR REPLACE INDEX sucursal_taller_suc_f2_ix ON SUCURSAL_TALLER_F2_AHG_S2(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref12 
 --
 
-CREATE INDEX sucursal_venta_suc_f2_ix ON SUCURSAL_VENTA_F2_AHG_S2(SUCURSAL_ID)
+CREATE OR REPLACE INDEX sucursal_venta_suc_f2_ix ON SUCURSAL_VENTA_F2_AHG_S2(SUCURSAL_ID)
 ;
