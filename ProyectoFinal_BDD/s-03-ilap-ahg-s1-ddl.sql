@@ -17,10 +17,9 @@ begin
 	end if;
 end;
 /
-
 declare
     v_status_laptop varchar2(30) 	            := 'STATUS_LAPTOP';
-    v_historico_status_laptop_f2_ahg_s1 varchar2(30) := 'HISTORICO_STATUS_LAPTOP_F1_AHG_S1';
+    v_historico_status_laptop_f2_ahg_s1 varchar2(40) := 'HISTORICO_STATUS_LAPTOP_F2_AHG_S1';
     v_tipo_procesador_r_ahg_s1 varchar2(30)     := 'TIPO_PROCESADOR_R_AHG_S1';
 	v_tipo_tarjeta_video_r_ahg_s1 varchar2(30)	:= 'TIPO_TARJETA_VIDEO_R_AHG_S1';
 	v_tipo_almacenamiento_r_ahg_s1 varchar2(30) := 'TIPO_ALMACENAMIENTO_R_AHG_S1';
@@ -44,6 +43,7 @@ begin
     drop_table_if_exists(v_sucursal_taller_f1_ahg_s1);
     drop_table_if_exists(v_sucursal_venta_f1_ahg_s1);
     drop_table_if_exists(v_servicio_laptop_f1_ahg_s1);
+end;
 /
 
 --
