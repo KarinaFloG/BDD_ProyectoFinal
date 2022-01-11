@@ -245,47 +245,47 @@ CREATE TABLE SUCURSAL_VENTA_F3_KFG_S1(
 -- INDEX: Ref53 
 --
 
-CREATE INDEX laptop_proc_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_PROCESADOR_ID)
+CREATE or replace INDEX laptop_proc_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_PROCESADOR_ID)
 ;
 -- 
 -- INDEX: Ref64 
 --
 
-CREATE INDEX laptop_tarjeta_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_TARJETA_VIDEO_ID)
+CREATE or replace INDEX laptop_tarjeta_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_TARJETA_VIDEO_ID)
 ;
 -- 
 -- INDEX: Ref75 
 --
 
-CREATE INDEX laptop_almacenamiento_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_ALMACENAMIENTO_ID)
+CREATE or replace INDEX laptop_almacenamiento_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_ALMACENAMIENTO_ID)
 ;
 -- 
 -- INDEX: Ref86 
 --
 
-CREATE INDEX laptop_monitor_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_MONITOR_ID)
+CREATE or replace INDEX laptop_monitor_f4_ix ON LAPTOP_F4_KFG_S1(TIPO_MONITOR_ID)
 ;
 -- 
 -- INDEX: Ref99 
 --
 
-CREATE INDEX laptop_inv_status_f1_ix ON LAPTOP_INVENTARIO_F1_KFG_S1(STATUS_LAPTOP_ID)
+CREATE or replace INDEX laptop_inv_status_f1_ix ON LAPTOP_INVENTARIO_F1_KFG_S1(STATUS_LAPTOP_ID)
 ;
 -- 
 -- INDEX: Ref27 
 --
 
-CREATE INDEX servicio_lap_suc_f3_ix ON SERVICIO_LAPTOP_F3_KFG_S1(SUCURSAL_ID)
+CREATE or replace INDEX servicio_lap_suc_f3_ix ON SERVICIO_LAPTOP_F3_KFG_S1(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref11 
 --
 
-CREATE INDEX sucursal_taller_suc_f3_ix ON SUCURSAL_TALLER_F3_KFG_S1(SUCURSAL_ID)
+CREATE or replace INDEX sucursal_taller_suc_f3_ix ON SUCURSAL_TALLER_F3_KFG_S1(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref12 
 --
 
-CREATE INDEX sucursal_venta_suc_f3_ix ON SUCURSAL_VENTA_F3_KFG_S1(SUCURSAL_ID)
+CREATE or replace INDEX sucursal_venta_suc_f3_ix ON SUCURSAL_VENTA_F3_KFG_S1(SUCURSAL_ID)
 ;

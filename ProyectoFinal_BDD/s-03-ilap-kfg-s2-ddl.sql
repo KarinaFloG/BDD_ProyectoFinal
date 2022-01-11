@@ -2,8 +2,7 @@
 --@Autor: Alejandro Herrera Gandarela
 --@Fecha creación: 23/12/2021
 --@Descripción: DDL para sitio N4
-p
-rompt Creando tablas para el sitio N3 en KFGBDD_S2
+prompt Creando tablas para el sitio N3 en KFGBDD_S2
 
 create or replace procedure drop_table_if_exists(name in varchar2) is
 	v_count number;
@@ -43,6 +42,7 @@ begin
     drop_table_if_exists(v_sucursal_taller_f4_kfg_s2);
     drop_table_if_exists(v_sucursal_venta_f4_kfg_s2);
     drop_table_if_exists(v_servicio_laptop_f4_kfg_s2);
+end;
 /
 
 --

@@ -44,6 +44,7 @@ begin
     drop_table_if_exists(v_sucursal_taller_f1_ahg_s1);
     drop_table_if_exists(v_sucursal_venta_f1_ahg_s1);
     drop_table_if_exists(v_servicio_laptop_f1_ahg_s1);
+end;
 /
 
 --
