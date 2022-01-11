@@ -18,4 +18,4 @@ Prompt Creando al usuario ilap_bdd
 create user ilap_bdd identified by ilap_bdd quota unlimited on users;
 
 Prompt Otorgando permisos al usuario ilap_bdd
-grant create session, create table, create procedure, create sequence, create view, create synonym, create database link to ilap_bdd;
+grant create session, create table, create procedure, create sequence, create view, create synonym, create database link, create directory to ilap_bdd;
