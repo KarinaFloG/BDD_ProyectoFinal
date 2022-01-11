@@ -26,7 +26,8 @@ declare
 	v_tipo_monitor_r_kfg_s1 varchar2(30)	    := 'TIPO_MONITOR_R_KFG_S1';
 	v_laptop_f4_kfg_s1 varchar2(30) 	        := 'LAPTOP_F4_KFG_S1';
 	v_status_laptop varchar2(30) 	            := 'STATUS_LAPTOP';
-	v_laptop_inventario_f1_kfg_s1 varchar2(30) 	:= 'LAPTOP_INVENTARIO_F1_KFG_S1';
+	v_sucursal_f3_kfg_s1 varchar2(30) 	        := 'SUCURSAL_F3_KFG_S1';
+    v_laptop_inventario_f1_kfg_s1 varchar2(30) 	:= 'LAPTOP_INVENTARIO_F1_KFG_S1';
 	v_sucursal_taller_f3_kfg_s1 varchar2(30) 	:= 'SUCURSAL_TALLER_F3_KFG_S1';
     v_sucursal_venta_f3_kfg_s1 varchar2(30) 	:= 'SUCURSAL_VENTA_F3_KFG_S1';
     v_servicio_laptop_f3_kfg_s1 varchar2(30) 	:= 'SERVICIO_LAPTOP_F3_KFG_S1';
@@ -37,7 +38,8 @@ begin
 	drop_table_if_exists(v_tipo_monitor_r_kfg_s1);
 	drop_table_if_exists(v_laptop_f4_kfg_s1);
 	drop_table_if_exists(v_status_laptop);
-	drop_table_if_exists(v_laptop_inventario_f1_kfg_s1;)
+    drop_table_if_exists(v_sucursal_f3_kfg_s1);
+	drop_table_if_exists(v_laptop_inventario_f1_kfg_s1);
 	drop_table_if_exists(v_sucursal_taller_f3_kfg_s1);
     drop_table_if_exists(v_sucursal_venta_f3_kfg_s1);
     drop_table_if_exists(v_servicio_laptop_f3_kfg_s1);
@@ -53,7 +55,7 @@ begin
 	where index_name = name;
 	
 	if (v_count > 0) then
-       		execute immediate 'drop index ' || name ||;
+       		execute immediate 'drop index ' || name ;
 	end if;
 end;
 /
@@ -68,13 +70,14 @@ declare
     v_servicio_lap_suc_f1_ix varchar2(30) := 'SERVICIO_LAP_SUC_F3_IX';
     v_laptop_inv_status_f1_ix varchar2(30) := 'LAPTOP_INV_STATUS_F1_IX';
     v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F3_IX';
+    
     v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F3_IX';
 
 begin
-    drop_index_if_exists(v_laptop_proc_f2_ix);
-    drop_index_if_exists(v_laptop_tarjeta_f2_ix);
-    drop_index_if_exists(v_laptop_almacenamiento_f2_ix);
-    drop_index_if_exists(v_laptop_monitor_f2_ix);
+    drop_index_if_exists(v_laptop_proc_f4_ix);
+    drop_index_if_exists(v_laptop_tarjeta_f4_ix);
+    drop_index_if_exists(v_laptop_almacenamiento_f4_ix);
+    drop_index_if_exists(v_laptop_monitor_f4_ix);
     drop_index_if_exists(v_servicio_lap_suc_f1_ix);
     drop_index_if_exists(v_laptop_inv_status_f1_ix);
     drop_index_if_exists(v_sucursal_taller_suc_f2_ix);
@@ -201,7 +204,7 @@ CREATE TABLE LAPTOP_INVENTARIO_F1_KFG_S1(
     SUCURSAL_ID         NUMBER(5, 0)     NOT NULL,
     RFC_CLIENTE         VARCHAR2(13),
     NUM_TARJETA         VARCHAR2(16),
-    STATUS_LAPTOP_ID    NUMBER(40, 0)    NOT NULL,
+    STATUS_LAPTOP_ID    NUMBER(10, 0)    NOT NULL,
     CONSTRAINT LAPTOP_INVENTARIO_F1_KFG_S1_PK PRIMARY KEY (LAPTOP_ID), 
     CONSTRAINT LAPTOP_INV_F1_STATUS_LAPTOP_FK FOREIGN KEY (STATUS_LAPTOP_ID)
     REFERENCES STATUS_LAPTOP(STATUS_LAPTOP_ID) ON DELETE cascade

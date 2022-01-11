@@ -55,7 +55,7 @@ begin
 	where index_name = name;
 	
 	if (v_count > 0) then
-       		execute immediate 'drop index ' || name ||;
+       		execute immediate 'drop index ' || name ;
 	end if;
 end;
 /
@@ -284,47 +284,47 @@ CREATE TABLE SUCURSAL_VENTA_F2_AHG_S2(
 -- INDEX: Ref108 
 --
 
-CREATE OR REPLACE INDEX historico_status_f1_ix ON HISTORICO_STATUS_LAPTOP_F1_AHG_S2(STATUS_LAPTOP_ID)
+CREATE INDEX historico_status_f1_ix ON HISTORICO_STATUS_LAPTOP_F1_AHG_S2(STATUS_LAPTOP_ID)
 ;
 -- 
 -- INDEX: Ref53 
 --
 
-CREATE OR REPLACE INDEX laptop_proc_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_PROCESADOR_ID)
+CREATE INDEX laptop_proc_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_PROCESADOR_ID)
 ;
 -- 
 -- INDEX: Ref64 
 --
 
-CREATE OR REPLACE INDEX laptop_tarjeta_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_TARJETA_VIDEO_ID)
+CREATE INDEX laptop_tarjeta_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_TARJETA_VIDEO_ID)
 ;
 -- 
 -- INDEX: Ref75 
 --
 
-CREATE OR REPLACE INDEX laptop_almacenamiento_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_ALMACENAMIENTO_ID)
+CREATE INDEX laptop_almacenamiento_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_ALMACENAMIENTO_ID)
 ;
 -- 
 -- INDEX: Ref86 
 --
 
-CREATE OR REPLACE INDEX laptop_monitor_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_MONITOR_ID)
+CREATE INDEX laptop_monitor_f5_ix ON LAPTOP_F5_AHG_S2(TIPO_MONITOR_ID)
 ;
 -- 
 -- INDEX: Ref27 
 --
 
-CREATE OR REPLACE INDEX servicio_lap_suc_f2_ix ON SERVICIO_LAPTOP_F2_AHG_S2(SUCURSAL_ID)
+CREATE INDEX servicio_lap_suc_f2_ix ON SERVICIO_LAPTOP_F2_AHG_S2(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref11 
 --
 
-CREATE OR REPLACE INDEX sucursal_taller_suc_f2_ix ON SUCURSAL_TALLER_F2_AHG_S2(SUCURSAL_ID)
+CREATE INDEX sucursal_taller_suc_f2_ix ON SUCURSAL_TALLER_F2_AHG_S2(SUCURSAL_ID)
 ;
 -- 
 -- INDEX: Ref12 
 --
 
-CREATE OR REPLACE INDEX sucursal_venta_suc_f2_ix ON SUCURSAL_VENTA_F2_AHG_S2(SUCURSAL_ID)
+CREATE INDEX sucursal_venta_suc_f2_ix ON SUCURSAL_VENTA_F2_AHG_S2(SUCURSAL_ID)
 ;

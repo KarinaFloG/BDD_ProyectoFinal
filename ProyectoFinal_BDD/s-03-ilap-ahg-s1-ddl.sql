@@ -56,7 +56,7 @@ begin
 	where index_name = name;
 	
 	if (v_count > 0) then
-       		execute immediate 'drop index ' || name ||;
+       		execute immediate 'drop index '|| name ;
 	end if;
 end;
 /
@@ -79,8 +79,8 @@ begin
     drop_index_if_exists(v_laptop_almacenamiento_f2_ix);
     drop_index_if_exists(v_laptop_monitor_f2_ix);
     drop_index_if_exists(v_servicio_lap_suc_f1_ix);
-    drop_index_if_exists(v_sucursal_taller_suc_f2_ix);
-    drop_index_if_exists(v_sucursal_venta_suc_f2_ix);
+    drop_index_if_exists(v_sucursal_taller_suc_f1_ix);
+    drop_index_if_exists(v_sucursal_venta_suc_f1_ix);
 
 end;
 /

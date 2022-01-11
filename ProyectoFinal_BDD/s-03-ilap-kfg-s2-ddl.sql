@@ -32,7 +32,7 @@ declare
     v_servicio_laptop_f4_kfg_s2 varchar2(30) 	:= 'SERVICIO_LAPTOP_F4_KFG_S2';
 begin
 	drop_table_if_exists(v_tipo_procesador_r_kfg_s2);
-	drop_table_if_exists(v_tipo_tarjeta_video_r_kfg_s2;
+	drop_table_if_exists(v_tipo_tarjeta_video_r_kfg_s2);
 	drop_table_if_exists(v_tipo_almacenamiento_r_kfg_s2);
 	drop_table_if_exists(v_tipo_monitor_r_kfg_s2);
 	drop_table_if_exists(v_laptop_f1_kfg_s2);
@@ -54,7 +54,7 @@ begin
 	where index_name = name;
 	
 	if (v_count > 0) then
-       		execute immediate 'drop index ' || name ||;
+       		execute immediate 'drop index ' || name;
 	end if;
 end;
 /
