@@ -2,7 +2,7 @@
 --@Fecha creación: 08/01/2022
 --@Descripción: Creación de fragmentos en los 4 nodos
 clear screen
-whenever sqlerror exit rollback;
+
 prompt =====================================
 prompt Creando fragmentos para ahgbdd_s1
 prompt =====================================
