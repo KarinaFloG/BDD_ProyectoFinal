@@ -39,23 +39,23 @@ create or replace synonym laptop_f3 for laptop_f3_kfg_s2@kfgbdd_s2;
 create or replace synonym laptop_f4 for laptop_f4_kfg_s1;
 create or replace synonym laptop_f5 for laptop_f5_ahg_s2@ahgbdd_s2;
 --tipo monitor
-create or replace synonym tipo_monitor_r1 for tipo_monitor_r_kfg_s2;
-create or replace synonym tipo_monitor_r2 for tipo_monitor_r_kfg_s1@kfgbdd_s1;
+create or replace synonym tipo_monitor_r1 for tipo_monitor_r_kfg_s1;
+create or replace synonym tipo_monitor_r2 for tipo_monitor_r_kfg_s2@kfgbdd_s2;
 create or replace synonym tipo_monitor_r3 for tipo_monitor_r_ahg_s1@ahgbdd_s1; 
 create or replace synonym tipo_monitor_r4 for tipo_monitor_r_ahg_s2@ahgbdd_s2;
 --tipo almacenamiento
-create or replace synonym tipo_almacenamiento_r1 for tipo_almacenamiento_r_kfg_s2;
-create or replace synonym tipo_almacenamiento_r2 for tipo_almacenamiento_r_kfg_s1@kfgbdd_s1;
+create or replace synonym tipo_almacenamiento_r1 for tipo_almacenamiento_r_kfg_s1;
+create or replace synonym tipo_almacenamiento_r2 for tipo_almacenamiento_r_kfg_s2@kfgbdd_s2;
 create or replace synonym tipo_almacenamiento_r3 for tipo_almacenamiento_r_ahg_s1@ahgbdd_s1; 
 create or replace synonym tipo_almacenamiento_r4 for tipo_almacenamiento_r_ahg_s2@ahgbdd_s2;
 --tipo tarjeta video
-create or replace synonym tipo_tarjeta_video_r1 for tipo_tarjeta_video_r_kfg_s2;
-create or replace synonym tipo_tarjeta_video_r2 for tipo_tarjeta_video_r_kfg_s1@kfgbdd_s1;
+create or replace synonym tipo_tarjeta_video_r1 for tipo_tarjeta_video_r_kfg_s1;
+create or replace synonym tipo_tarjeta_video_r2 for tipo_tarjeta_video_r_kfg_s2@kfgbdd_s2;
 create or replace synonym tipo_tarjeta_video_r3 for tipo_tarjeta_video_r_ahg_s1@ahgbdd_s1; 
 create or replace synonym tipo_tarjeta_video_r4 for tipo_tarjeta_video_r_ahg_s2@ahgbdd_s2;
 --tipo procesador
-create or replace synonym tipo_procesador_r2 for tipo_procesador_r_kfg_s2;
-create or replace synonym tipo_procesador_r1 for tipo_procesador_r_kfg_s1@kfgbdd_s1;
+create or replace synonym tipo_procesador_r2 for tipo_procesador_r_kfg_s1;
+create or replace synonym tipo_procesador_r1 for tipo_procesador_r_kfg_s2@kfgbdd_s2;
 create or replace synonym tipo_procesador_r3 for tipo_procesador_r_ahg_s1@ahgbdd_s1; 
 create or replace synonym tipo_procesador_r4 for tipo_procesador_r_ahg_s2@ahgbdd_s2;
 
