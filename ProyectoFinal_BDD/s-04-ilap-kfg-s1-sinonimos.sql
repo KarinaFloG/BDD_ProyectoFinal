@@ -26,11 +26,12 @@ create or replace synonym servicio_laptop_f1 for servicio_laptop_f1_ahg_s1@ahgbd
 create or replace synonym servicio_laptop_f2 for servicio_laptop_f2_ahg_s2@ahgbdd_s2;
 create or replace synonym servicio_laptop_f3 for servicio_laptop_f3_kfg_s1;
 create or replace synonym servicio_laptop_f4 for servicio_laptop_f4_kfg_s2@kfgbdd_s2;
+
 --historico status
 create or replace synonym historico_status_laptop_f1 for historico_status_laptop_f1_ahg_s2@ahgbdd_s2;
 create or replace synonym historico_status_laptop_f2 for historico_status_laptop_f2_ahg_s1@ahgbdd_s1;
 --laptop inventario
-create or replace synonym laptop_inventario_f1 for laptop_inventario_f1_kfg_s1@kfgbdd_s1;
+create or replace synonym laptop_inventario_f1 for laptop_inventario_f1_kfg_s1;
 create or replace synonym laptop_inventario_f2 for laptop_inventario_f2_ahg_s1@ahgbdd_s1;
 --laptop
 create or replace synonym laptop_f1 for laptop_f1_kfg_s2@kfgbdd_s2;
