@@ -1,3 +1,49 @@
+--@Autor: Karina Flores García 
+--@Autor: Alejandro Herrera Gandarela
+--@Fecha creación: 23/12/2021
+--@Descripción: DDL para sitio N3
+
+prompt Creando tablas para el sitio N3 en KFGBDD_S1
+
+create or replace procedure drop_table_if_exists(name in varchar2) is
+	v_count number;
+begin
+	select count(*) 
+	into v_count 
+	from all_tables 
+	where table_name = name;
+	
+	if (v_count > 0) then
+       		execute immediate 'drop table ' || name || ' cascade constraints';
+	end if;
+end;
+/
+
+declare
+	v_tipo_procesador_r_kfg_s1 varchar2(30)     := 'TIPO_PROCESADOR_R_KFG_S1';
+	v_tipo_tarjeta_video_r_kfg_s1 varchar2(30)	:= 'TIPO_TARJETA_VIDEO_R_KFG_S1';
+	v_tipo_almacenamiento_r_kfg_s1 varchar2(30) := 'TIPO_ALMACENAMIENTO_R_KFG_S1';
+	v_tipo_monitor_r_kfg_s1 varchar2(30)	    := 'TIPO_MONITOR_R_KFG_S1';
+	v_laptop_f4_kfg_s1 varchar2(30) 	        := 'LAPTOP_F4_KFG_S1';
+	v_status_laptop varchar2(30) 	            := 'STATUS_LAPTOP';
+	v_laptop_inventario_f1_kfg_s1 varchar2(30) 	:= 'LAPTOP_INVENTARIO_F1_KFG_S1';
+	v_sucursal_taller_f3_kfg_s1 varchar2(30) 	:= 'SUCURSAL_TALLER_F3_KFG_S1';
+    v_sucursal_venta_f3_kfg_s1 varchar2(30) 	:= 'SUCURSAL_VENTA_F3_KFG_S1';
+    v_servicio_laptop_f3_kfg_s1 varchar2(30) 	:= 'SERVICIO_LAPTOP_F3_KFG_S1';
+begin
+	drop_table_if_exists(v_tipo_procesador_r_kfg_s1);
+	drop_table_if_exists(v_tipo_tarjeta_video_r_kfg_s1);
+	drop_table_if_exists(v_tipo_almacenamiento_r_kfg_s1);
+	drop_table_if_exists(v_tipo_monitor_r_kfg_s1);
+	drop_table_if_exists(v_laptop_f4_kfg_s1);
+	drop_table_if_exists(v_status_laptop);
+	drop_table_if_exists(v_laptop_inventario_f1_kfg_s1;)
+	drop_table_if_exists(v_sucursal_taller_f3_kfg_s1);
+    drop_table_if_exists(v_sucursal_venta_f3_kfg_s1);
+    drop_table_if_exists(v_servicio_laptop_f3_kfg_s1);
+end;
+/
+
 
 CREATE TABLE TIPO_PROCESADOR_R_KFG_S1(
     TIPO_PROCESADOR_ID    NUMBER(5, 0)     NOT NULL,
