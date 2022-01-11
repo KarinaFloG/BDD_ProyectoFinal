@@ -33,10 +33,10 @@ create or replace synonym historico_status_laptop_f2 for historico_status_laptop
 create or replace synonym laptop_inventario_f1 for laptop_inventario_f1_kfg_s1@kfgbdd_s1;
 create or replace synonym laptop_inventario_f2 for laptop_inventario_f2_ahg_s1@ahgbdd_s1;
 --laptop
-create or replace synonym laptop_f1 for laptop_f1_kfg_s2;
+create or replace synonym laptop_f1 for laptop_f1_kfg_s2@kfgbdd_s2;
 create or replace synonym laptop_f2 for laptop_f2_ahg_s1@ahgbdd_s1;
-create or replace synonym laptop_f3 for laptop_f3_kfg_s2;
-create or replace synonym laptop_f4 for laptop_f4_kfg_s1@kfgbdd_s1;
+create or replace synonym laptop_f3 for laptop_f3_kfg_s2@kfgbdd_s2;
+create or replace synonym laptop_f4 for laptop_f4_kfg_s1;
 create or replace synonym laptop_f5 for laptop_f5_ahg_s2@ahgbdd_s2;
 --tipo monitor
 create or replace synonym tipo_monitor_r1 for tipo_monitor_r_kfg_s2;
