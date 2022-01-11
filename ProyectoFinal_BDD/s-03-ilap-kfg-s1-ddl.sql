@@ -70,7 +70,6 @@ declare
     v_servicio_lap_suc_f1_ix varchar2(30) := 'SERVICIO_LAP_SUC_F3_IX';
     v_laptop_inv_status_f1_ix varchar2(30) := 'LAPTOP_INV_STATUS_F1_IX';
     v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F3_IX';
-    
     v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F3_IX';
 
 begin
