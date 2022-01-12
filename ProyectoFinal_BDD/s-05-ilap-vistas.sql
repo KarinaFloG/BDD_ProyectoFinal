@@ -46,8 +46,8 @@ select q2.sucursal_id, q2.hora_apertura, q2.hora_cierre from (
 
 --laptop
 create or replace view laptop as
-select q3.laptop_id, q3.num_serie, q3.cantidad_ram, q3.caracteristicas_extras, l1.foto, q3.tipo_tarjeta_video_id, q3.tipo_procesador_id, q3.tipo_almacenamiento_id,
-q3.tipo_monitor_id, q3.laptop_remplazo_id from
+select q3.laptop_id, q3.num_serie, q3.cantidad_ram, q3.caracteristicas_extras, q3.tipo_tarjeta_video_id, q3.tipo_procesador_id, q3.tipo_almacenamiento_id,
+q3.tipo_monitor_id from
  (
     select laptop_id, num_serie, cantidad_ram, caracteristicas_extras,tipo_tarjeta_video_id, tipo_procesador_id, tipo_almacenamiento_id,
     tipo_monitor_id, laptop_reemplazo_id from laptop_f2 
@@ -66,24 +66,24 @@ l1.laptop_id = q3.laptop_id;
 
 --laptop inventario
 create or replace view laptop_inventario as
-select li1.laptop_id, li1.fecha_status, li2.rfc_cliente, li2.num_tarjeta, li1.sucursal_id, li1.status_laptop_id 
+select li1.laptop_id, li2.fecha_status, li1.rfc_cliente, li1.num_tarjeta, li1.sucursal_id, li1.status_laptop_id 
 from laptop_inventario_f1 li1 
 join laptop_inventario_f2 li2 
 on li1.laptop_id = li2.laptop_id;
 
 --servicio laptop
 create or replace view servicio_laptop
-select q4.num_servicio, q4.laptop_id, q4.importe, q4.diagnostico, q4.factura, q4.sucursal_id from 
-  (select num_servicio, laptop_id, importe, diagnostico, factura, sucursal_id from servicio_laptop_f1 sl1 where exists(
+select q4.num_servicio, q4.laptop_id, q4.importe, q4.diagnostico, q4.sucursal_id from 
+  (select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f1 sl1 where exists(
       select 1 from sucursal_f1 s1 where s1.laptop_id = sl1.laptop_id )
   union all
-    select num_servicio, laptop_id, importe, diagnostico, factura, sucursal_id from servicio_laptop_f2 sl2 where exists(
+    select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f2 sl2 where exists(
       select 1 from sucursal_f2 s2 where s2.laptop_id = sl2.laptop_id )
   union all
-    select num_servicio, laptop_id, importe, diagnostico, factura, sucursal_id from servicio_laptop_f3 sl3 where exists(
+    select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f3 sl3 where exists(
       select 1 from sucursal_f3 s3 where s3.laptop_id = sl3.laptop_id )
   union all
-    select num_servicio, laptop_id, importe, diagnostico, factura, sucursal_id from servicio_laptop_f4 sl4 where exists(
+    select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f4 sl4 where exists(
       select 1 from sucursal_f4 s4 where s4.laptop_id = sl4.laptop_id )
   
 ) q4;

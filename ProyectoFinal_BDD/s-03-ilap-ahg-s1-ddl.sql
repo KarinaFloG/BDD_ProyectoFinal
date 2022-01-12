@@ -69,8 +69,8 @@ declare
     v_laptop_almacenamiento_f2_ix varchar2(30) := 'LAPTOP_ALMACENAMIENTO_F2_IX';
     v_laptop_monitor_f2_ix varchar2(30) := 'LAPTOP_MONITOR_F2_IX';
     v_servicio_lap_suc_f1_ix varchar2(30) := 'SERVICIO_LAP_SUC_F1_IX';
-    v_sucursal_taller_suc_f2_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F1_IX';
-    v_sucursal_venta_suc_f2_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F1_IX';
+    v_sucursal_taller_suc_f1_ix varchar(30) := 'SUCURSAL_TALLER_SUC_F1_IX';
+    v_sucursal_venta_suc_f1_ix varchar2(30) := 'SUCURSAL_VENTA_SUC_F1_IX';
 
 begin
 	drop_index_if_exists(v_historico_status_f2_ix);

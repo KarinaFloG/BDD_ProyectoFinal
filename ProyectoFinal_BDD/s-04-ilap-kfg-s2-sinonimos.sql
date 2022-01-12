@@ -23,11 +23,11 @@ create or replace synonym sucursal_venta_f2 for sucursal_venta_f2_ahg_s2@ahgbdd_
 create or replace synonym sucursal_venta_f3 for sucursal_venta_f3_kfg_s1@kfgbdd_s1;
 create or replace synonym sucursal_venta_f4 for sucursal_venta_f4_kfg_s2@kfgbdd_s2;
 --servicio laptop
-create or replace synonym servicio_laptop_f1 for servicio_laptop_f1_kfg_s2@kfgbdd_s2; 
-create or replace synonym servicio_laptop_f2 for servicio_laptop_f2_ahg_s1@ahgbdd_s1;
-create or replace synonym servicio_laptop_f3 for servicio_laptop_f3_kfg_s2@kfgbdd_s2;
-create or replace synonym servicio_laptop_f4 for servicio_laptop_f4_kfg_s1@kfgbdd_s1;
-create or replace synonym servicio_laptop_f5 for servicio_laptop_f4_ahg_s1@ahgbdd_s2;
+create or replace synonym servicio_laptop_f1 for servicio_laptop_f1_ahg_s1@ahgbdd_s1; 
+create or replace synonym servicio_laptop_f2 for servicio_laptop_f2_ahg_s2@ahgbdd_s2;
+create or replace synonym servicio_laptop_f3 for servicio_laptop_f3_kfg_s1@kfgbdd_s1;
+create or replace synonym servicio_laptop_f4 for servicio_laptop_f4_kfg_s2;
+
 --historico status
 create or replace synonym historico_status_laptop_f1 for historico_status_laptop_f1_ahg_s2@ahgbdd_s2;
 create or replace synonym historico_status_laptop_f2 for historico_status_laptop_f2_ahg_s1@ahgbdd_s1;
