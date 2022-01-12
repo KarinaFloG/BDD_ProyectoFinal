@@ -29,7 +29,6 @@ case
     when updating then
         raise_application_error(-20030,
             ' Las operaciones update aun no han sido implementadas ');
-        end if;
     when deleting then
         if substr(:new.clave,3,2) like 'NO' or (:new.es_taller=1 and :new.es_venta=1) then
             delete from sucursal_f1 where sucursal_id = :old.sucursal_id;
@@ -48,3 +47,4 @@ case
 end case;
 end;
 /   
+show errors

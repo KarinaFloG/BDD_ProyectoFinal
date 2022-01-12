@@ -37,7 +37,7 @@ connect ilap_bdd/ilap_bdd@ahgbdd_s2
 Prompt ==============================
 Prompt Creando triggers en kfgbdd_s1
 Prompt ==============================
-connect ilap_bdd/ilap_bdd@kfgbd_s1
+connect ilap_bdd/ilap_bdd@kfgbdd_s1
 @s-06-ilap-sucursal-trigger.sql
 @s-06-ilap-kfg-s1-sucursal-taller-trigger.sql
 @s-06-ilap-kfg-s1-sucursal-venta-trigger.sql
@@ -65,3 +65,4 @@ connect ilap_bdd/ilap_bdd@kfgbdd_s2
 @s-06-ilap-tipo-monitor-trigger.sql
 @s-06-ilap-tipo-tarjeta-video-trigger.sql
 Prompt Listo!
+disconnect
