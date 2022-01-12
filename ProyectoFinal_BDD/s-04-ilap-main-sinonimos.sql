@@ -28,3 +28,4 @@ connect ilap_bdd/ilap_bdd@kfgbdd_s2
 @s-04-ilap-kfg-s2-sinonimos.sql
 @s-04-ilap-valida-sinonimos.sql
 prompt Listo!
+disconnect
