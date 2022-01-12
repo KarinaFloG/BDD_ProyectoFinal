@@ -62,6 +62,7 @@ case
                     end if;
                 end if;
             end if;
+        end if;
     when updating then
         raise_application_error(-20030,
             'La operacion update no ha sido implementada');

@@ -286,6 +286,7 @@ NL-08014: Failed to initialize Diagnosability framework, falling back to old net
   ORA-48165: user missing read, write, or exec permission on specified ADR Base directory []
 User inputted base directory is invalid [48188] [/u01/app/oracle]
 
+<<<<<<< .merge_file_Fl33Vc
 NL-08014: Failed to initialize Diagnosability framework, falling back to old network tracing/logging 
  
  NL-08015: Client(OCI) side initialization of Diagnosability framework failed
@@ -322,6 +323,14 @@ NL-08014: Failed to initialize Diagnosability framework, falling back to old net
   ORA-48165: user missing read, write, or exec permission on specified ADR Base directory []
 User inputted base directory is invalid [48188] [/u01/app/oracle]
 
+NL-08014: Failed to initialize Diagnosability framework, falling back to old network tracing/logging 
+ 
+ NL-08015: Client(OCI) side initialization of Diagnosability framework failed
+  ORA-48165: user missing read, write, or exec permission on specified ADR Base directory []
+User inputted base directory is invalid [48188] [/u01/app/oracle]
+
+=======
+>>>>>>> .merge_file_mpCePi
 NL-08014: Failed to initialize Diagnosability framework, falling back to old network tracing/logging 
  
  NL-08015: Client(OCI) side initialization of Diagnosability framework failed
