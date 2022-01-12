@@ -32,14 +32,21 @@ case
                 if v_count > 0 then
                     insert into sucursal_taller_f3(sucursal_id,dia_descanso,telefono_atencion)
                     values(:new.sucursal_id,:new.dia_descanso,:new.telefono_atencion);
+<<<<<<< HEAD
                 
+=======
+>>>>>>> origin/dev_karina
                 else
                     select count(*) into v_count
                     from sucursal_f4
                     where sucursal_id = :new.sucursal_id;
                     if v_count > 0 then
                         insert into sucursal_taller_f4(sucursal_id,dia_descanso,telefono_atencion)
+<<<<<<< HEAD
                         values(:new.sucursal_id,:new.dia_descanso,:new.telefono_atencion);                    
+=======
+                        values(:new.sucursal_id,:new.dia_descanso,:new.telefono_atencion);
+>>>>>>> origin/dev_karina
                     else
                         raise_application_error(-20020,
                         'Error de integridad para el campo sucursal_id : '
@@ -92,3 +99,4 @@ case
 end case;
 end;
 /   
+show errors

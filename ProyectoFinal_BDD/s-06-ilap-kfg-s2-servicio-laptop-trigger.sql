@@ -1,7 +1,6 @@
 --@Autor: Karina Flores García
 --@Fecha creación: 08/01/2022 
 --@Descripción: trigger para transparencia de instrucciones DML para tabla servicio_laptop
-
 create or replace trigger t_dml_servicio_laptop
 instead of insert or update or delete on servicio_laptop
 declare
@@ -105,3 +104,4 @@ case
 end case;
 end;
 /   
+show errors

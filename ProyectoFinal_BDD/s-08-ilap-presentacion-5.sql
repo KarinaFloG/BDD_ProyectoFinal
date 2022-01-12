@@ -6,7 +6,7 @@ connect ilap_bdd/ilap_bdd@&pdb
 set serveroutput on
 Prompt Eliminando datos ...
 declare
-v_formato varchar2(50) := 'yyy-mm-dd hh24:mi:ss';
+v_formato varchar2(50) := 'yyyy-mm-dd hh24:mi:ss';
 begin
 dbms_output.put_line(to_char(sysdate,v_formato)
 || ' Eliminando datos de playlist');

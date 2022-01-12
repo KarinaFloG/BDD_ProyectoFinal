@@ -47,7 +47,10 @@ case
     when updating then
         raise_application_error(-20030,
             ' Las operaciones update aun no han sido implementadas ');
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/dev_karina
     when deleting then
         if :new.num_serie between '0%' and '1%' then
             delete from laptop_f1 where laptop_id = :old.laptop_id;
@@ -65,3 +68,4 @@ case
 end case;
 end;
 /   
+show errors

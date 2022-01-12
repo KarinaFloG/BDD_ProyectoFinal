@@ -27,3 +27,4 @@ begin
     end case;
 end;
 /
+show errors

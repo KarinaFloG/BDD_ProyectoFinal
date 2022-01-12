@@ -105,3 +105,4 @@ case
 end case;
 end;
 /   
+show errors
