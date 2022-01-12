@@ -109,10 +109,7 @@ select tipo_tarjeta_video_id, clave, descripcion
 from tipo_tarjeta_video_r1;
   
 --Historico_status
-create or replace view historico_status
-select q4.historico_status_laptop_id, q4.fecha_status, q4.laptop_id, q4.status_laptop_id from 
-(
-    select historico_status_laptop_id, fecha_status, laptop_id, status_laptop_id from HISTORICO_STATUS_LAPTOP_F1_AHG_S2
+create or replace view historico_status_laptop as
+    select historico_status_laptop_id, fecha_status, laptop_id, status_laptop_id from historico_status_laptop_f1
     union all
-    select historico_status_laptop_id, fecha_status, laptop_id, status_laptop_id from HISTORICO_STATUS_LAPTOP_F2_AHG_S1 
-) q4;
+    select historico_status_laptop_id, fecha_status, laptop_id, status_laptop_id from HISTORICO_STATUS_LAPTOP_F2 ;

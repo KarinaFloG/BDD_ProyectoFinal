@@ -28,7 +28,7 @@ connect ilap_bdd/ilap_bdd@ahgbdd_s2
 @s-06-ilap-ahg-s2-sucursal-venta-trigger.sql
 @s-06-ilap-laptop-trigger.sql
 @s-06-ilap-laptop-inventario-trigger.sql
-@s-06-ilap-laptop-inventario-trigger.sql
+show errors
 @s-06-ilap-historico-status-laptop-trigger.sql
 @s-06-ilap-ahg-s2-servicio-laptop-trigger.sql
 @s-06-ilap-tipo-procesador-trigger.sql
