@@ -4,7 +4,7 @@
 -- de datos BLOB en los 4 nodos.
 Prompt configurando directorios y otorgando registros.
 --ahgbdd_s1
-Prompt configurando soporte BLOB para jrcbd_s1
+Prompt configurando soporte BLOB para ahgbdd_s1
 connect ilap_bdd/ilap_bdd@ahgbdd_s1
 @s-07-ilap-configuracion-soporte-blobs.sql
 --ahgbdd_s2

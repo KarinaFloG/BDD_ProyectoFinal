@@ -320,11 +320,3 @@ CREATE INDEX servicio_lap_suc_f2_ix ON SERVICIO_LAPTOP_F2_AHG_S2(SUCURSAL_ID)
 -- INDEX: Ref11 
 --
 
-CREATE INDEX sucursal_taller_suc_f2_ix ON SUCURSAL_TALLER_F2_AHG_S2(SUCURSAL_ID)
-;
--- 
--- INDEX: Ref12 
---
-
-CREATE INDEX sucursal_venta_suc_f2_ix ON SUCURSAL_VENTA_F2_AHG_S2(SUCURSAL_ID)
-;

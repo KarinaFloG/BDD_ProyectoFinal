@@ -322,11 +322,4 @@ CREATE INDEX servicio_lap_suc_f3_ix ON SERVICIO_LAPTOP_F3_KFG_S1(SUCURSAL_ID)
 -- INDEX: Ref11 
 --
 
-CREATE INDEX sucursal_taller_suc_f3_ix ON SUCURSAL_TALLER_F3_KFG_S1(SUCURSAL_ID)
-;
--- 
--- INDEX: Ref12 
---
 
-CREATE INDEX sucursal_venta_suc_f3_ix ON SUCURSAL_VENTA_F3_KFG_S1(SUCURSAL_ID)
-;
