@@ -56,7 +56,7 @@ case
         --verifica si hay correspondencia local para evitar acceso remoto
         select count(*) into v_count
         from sucursal_f3
-        where sucursal_id = :new.sucursal_id;
+        where sucursal_id = :old.sucursal_id;
         --insercion local
         if v_count > 0 then
             dbms_output.put_line('Eliminando en el sitio 03');
@@ -65,19 +65,19 @@ case
         else
             select count(*) into v_count
             from sucursal_f1
-            where sucursal_id = :new.sucursal_id;
+            where sucursal_id = :old.sucursal_id;
             if v_count > 0 then
                 delete from sucursal_venta_f1 where sucursal_id = :old.sucursal_id;
             else
                 select count(*) into v_count
                 from sucursal_f2
-                where sucursal_id = :new.sucursal_id;
+                where sucursal_id = :old.sucursal_id;
                 if v_count > 0 then
                     delete from sucursal_venta_f2 where sucursal_id = :old.sucursal_id;
                 else
                     select count(*) into v_count
                     from sucursal_f4
-                    where sucursal_id = :new.sucursal_id;
+                    where sucursal_id = :old.sucursal_id;
                     if v_count > 0 then
                         delete from sucursal_venta_f4 where sucursal_id = :old.sucursal_id;
                     else

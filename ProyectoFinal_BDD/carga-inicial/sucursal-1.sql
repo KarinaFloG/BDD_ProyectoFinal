@@ -1,4 +1,4 @@
-insert into sucursal (sucursal_id, clave, es_taller, es_venta, nombre, latitud, longitud, url) values (1, 'WYSO425163', 1, 0, 'VALLADOLID OAXACA ', '40.99426', '71.66092', 'http://dell.com/eu/massa/donec/dapibus/duis.aspx');
+insert into sucursal (sucursal_id, clave, es_taller, es_venta, nombre, latitud, longitud, url) values (1, 'WYSO425163', 1, 0, 'VALLADOLID OAXACA', '40.99426', '71.66092', 'http://dell.com/eu/massa/donec/dapibus/duis.aspx');
 insert into sucursal (sucursal_id, clave, es_taller, es_venta, nombre, latitud, longitud, url) values (2, 'WVNO568299', 1, 0, 'ADUANAL PUENTE AMANECER ', '33.28596', '112.34895', 'https://gnu.org/in/felis.png');
 insert into sucursal (sucursal_id, clave, es_taller, es_venta, nombre, latitud, longitud, url) values (3, 'WYNO064688', 1, 0, 'SAN ANDRES CHOLULA ', '-8.1145', '111.8582', 'https://mediafire.com/consequat/in/consequat/ut/nulla/sed/accumsan.jpg');
 insert into sucursal (sucursal_id, clave, es_taller, es_venta, nombre, latitud, longitud, url) values (4, 'WISO518313', 1, 0, 'JARAL DEL PROGRESO ', '40.15701', '44.09192', 'https://oracle.com/ut.jsp');

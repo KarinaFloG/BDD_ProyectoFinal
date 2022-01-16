@@ -30,13 +30,13 @@ case
         raise_application_error(-20030,
             ' Las operaciones update aun no han sido implementadas ');
     when deleting then
-        if substr(:new.clave,3,2) like 'NO' or (:new.es_taller=1 and :new.es_venta=1) then
+        if substr(:old.clave,3,2) like 'NO' or (:old.es_taller=1 and :old.es_venta=1) then
             delete from sucursal_f1 where sucursal_id = :old.sucursal_id;
-        elsif substr(:new.clave,3,2) like 'EA' and (:new.es_taller=1 or :new.es_venta=1) then
+        elsif substr(:old.clave,3,2) like 'EA' and (:old.es_taller=1 or :old.es_venta=1) then
             delete from sucursal_f2 where sucursal_id = :old.sucursal_id;
-        elsif substr(:new.clave,3,2) like 'WS' and (:new.es_taller=1 or :new.es_venta=1) then
+        elsif substr(:old.clave,3,2) like 'WS' and (:old.es_taller=1 or :old.es_venta=1) then
             delete from sucursal_f3 where sucursal_id = :old.sucursal_id;
-        elsif substr(:new.clave,3,2) like 'SO' and (:new.es_taller=1 or :new.es_venta=1) then
+        elsif substr(:old.clave,3,2) like 'SO' and (:old.es_taller=1 or :old.es_venta=1) then
             delete from sucursal_f4 where sucursal_id = :old.sucursal_id;
         else
             raise_application_error(-20010,

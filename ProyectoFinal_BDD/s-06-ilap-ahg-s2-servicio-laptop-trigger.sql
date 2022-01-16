@@ -31,10 +31,10 @@ case
                 delete from ti_servicio_laptop_f1
                 where sucursal_id = :new.sucursal_id;
             else
+                select count(*) into v_count
+                from sucursal_f3
+                where sucursal_id = :new.sucursal_id;
                 if v_count > 0 then
-                    select count(*) into v_count
-                    from sucursal_f3
-                    where sucursal_id = :new.sucursal_id;
                     insert into ti_servicio_laptop_f3(num_servicio,laptop_id,importe,diagnostico,factura,sucursal_id)
                     values(:new.num_servicio,:new.laptop_id,:new.importe,:new.diagnostico,:new.factura,:new.sucursal_id);
                     insert into servicio_laptop_f3

@@ -11,7 +11,8 @@ Prompt =>Seleccionar la PDB LOCAL para insertar datos
 Prompt => Asegurarse que las imagenes existen en ambos servidores
 connect ilap_bdd/ilap_bdd@&pdb
 Prompt Personalizando el formato de fechas
-alter session set nls_date_format='yyyy-mm-dd hh24:mi:ss';
+alter session set NLS_DATE_FORMAT='yyyy-mm-dd hh24:mi:ss';
+alter session set NLS_TIMESTAMP_FORMAT='yyyy-mm-dd hh24:mi:ss';
 Prompt =>Al ocurrir un error se saldrá del programa y se hará rollback
 whenever sqlerror exit rollback
 Pause => Presionar Enter para Iniciar con la extracción de datos binarios, Ctrl-C para cancelar

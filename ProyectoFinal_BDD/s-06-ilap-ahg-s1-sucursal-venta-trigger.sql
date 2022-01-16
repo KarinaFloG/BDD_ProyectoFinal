@@ -66,11 +66,7 @@ case
             from sucursal_f2
             where sucursal_id = :old.sucursal_id;
             if v_count > 0 then
-<<<<<<< HEAD
                 delete from sucursal_venta_f2 where sucursal_id = :old.sucursal_id;
-=======
-                delete from sucursal_venta_2 where sucursal_id = :old.sucursal_id;
->>>>>>> origin/dev_karina
             else
                 select count(*) into v_count
                 from sucursal_f3
@@ -80,11 +76,7 @@ case
                 else
                     select count(*) into v_count
                     from sucursal_f4
-<<<<<<< HEAD
                     where sucursal_id = :old.sucursal_id;
-=======
-                    where sucursal_id = :new.sucursal_id;
->>>>>>> origin/dev_karina
                     if v_count > 0 then
                         delete from sucursal_venta_f4 where sucursal_id = :old.sucursal_id;
                     else

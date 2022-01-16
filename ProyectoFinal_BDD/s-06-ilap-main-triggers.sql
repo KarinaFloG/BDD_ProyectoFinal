@@ -65,4 +65,3 @@ connect ilap_bdd/ilap_bdd@kfgbdd_s2
 @s-06-ilap-tipo-monitor-trigger.sql
 @s-06-ilap-tipo-tarjeta-video-trigger.sql
 Prompt Listo!
-disconnect

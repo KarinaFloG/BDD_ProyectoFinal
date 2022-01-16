@@ -69,7 +69,7 @@ case
         --verifica si hay correspondencia local para evitar acceso remoto
         select count(*) into v_count
         from sucursal_f4
-        where sucursal_id = :new.sucursal_id;
+        where sucursal_id = :old.sucursal_id;
         -- local
         if v_count > 0 then
             delete from servicio_laptop_f4 where sucursal_id = :old.sucursal_id;
@@ -77,19 +77,19 @@ case
         else
             select count(*) into v_count
             from sucursal_f1
-            where sucursal_id = :new.sucursal_id;
+            where sucursal_id = :old.sucursal_id;
             if v_count > 0 then
                 delete from servicio_laptop_f1 where sucursal_id = :old.sucursal_id;
             else
                 select count(*) into v_count
                 from sucursal_f2
-                where sucursal_id = :new.sucursal_id;
+                where sucursal_id = :old.sucursal_id;
                 if v_count > 0 then
                     delete from servicio_laptop_f2 where sucursal_id = :old.sucursal_id;
                 else
                     select count(*) into v_count
                     from sucursal_f3
-                    where sucursal_id = :new.sucursal_id;
+                    where sucursal_id = :old.sucursal_id;
                     if v_count > 0 then
                         delete from servicio_laptop_f3 where sucursal_id = :old.sucursal_id;
                     else
