@@ -10,9 +10,9 @@ v_formato varchar2(50) := 'yyyy-mm-dd hh24:mi:ss';
 begin
 dbms_output.put_line(to_char(sysdate,v_formato)
 || ' Eliminando datos de playlist');
---delete from historico_status_laptop;
+delete from historico_status_laptop;
 delete from servicio_laptop;
---delete from laptop_inventario;
+delete from laptop_inventario;
 delete from laptop;
 delete from sucursal_taller;
 delete from sucursal_venta;
