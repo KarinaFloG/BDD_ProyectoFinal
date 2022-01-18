@@ -67,32 +67,35 @@ case
         raise_application_error(-20030,
             'La operacion update no ha sido implementada');
     when deleting then
-        --verifica si hay correspondencia local para evitar acceso remoto
-        select count(*) into v_count
-        from sucursal_f3
-        where sucursal_id = :new.sucursal_id;
-        -- local
+        
+        
+        select distinct count(sucursal_id) into v_count
+        from sucursal_f1
+        where sucursal_id = :old.sucursal_id;
+        --insercion local
         if v_count > 0 then
-            delete from servicio_laptop_f3 where sucursal_id = :old.sucursal_id;
-        --remota
+
+            delete from servicio_laptop_f1 where laptop_id = :old.laptop_id and num_servicio = :old.num_servicio;
+        --insercion remota
         else
-            select count(*) into v_count
-            from sucursal_f1
+            select distinct count(sucursal_id) into v_count
+            from sucursal_f2
             where sucursal_id = :old.sucursal_id;
             if v_count > 0 then
-                delete from servicio_laptop_f1 where sucursal_id = :old.sucursal_id;
+                
+                delete from servicio_laptop_f2 where laptop_id = :old.laptop_id and num_servicio = :old.num_servicio;
             else
-                select count(*) into v_count
-                from sucursal_f2
+                select distinct count(sucursal_id) into v_count
+                from sucursal_f3
                 where sucursal_id = :old.sucursal_id;
                 if v_count > 0 then
-                    delete from servicio_laptop_f2 where sucursal_id = :old.sucursal_id;
+                    delete from servicio_laptop_f3 where laptop_id = :old.laptop_id and num_servicio = :old.num_servicio;
                 else
-                    select count(*) into v_count
+                    select distinct count(sucursal_id) into v_count
                     from sucursal_f4
                     where sucursal_id = :old.sucursal_id;
                     if v_count > 0 then
-                        delete from servicio_laptop_f4 where sucursal_id = :old.sucursal_id;
+                        delete from servicio_laptop_f4 where laptop_id = :old.laptop_id and num_servicio = :old.num_servicio;
                     else
                         raise_application_error(-20020,
                         'Error de integridad para el campo sucursal_id : '

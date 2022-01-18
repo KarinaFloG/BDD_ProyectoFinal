@@ -15,7 +15,7 @@ case
         where sucursal_id = :new.sucursal_id;
         --insercion local
         if v_count > 0 then
-            dbms_output.put_line('Insertando en el sitio 02');
+            
             insert into sucursal_taller_f2(sucursal_id,dia_descanso,telefono_atencion)
             values(:new.sucursal_id,:new.dia_descanso,:new.telefono_atencion);
         --insercion remota

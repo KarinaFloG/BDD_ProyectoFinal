@@ -38,7 +38,7 @@ diagnostico varchar2(2000) not null,
 factura blob,
 sucursal_id number(10,0) not null,
 constraint ti_servicio_laptop_f1_pk primary key (num_servicio, laptop_id)
-);
+) on commit preserve rows;
 
 create global temporary table ti_servicio_laptop_f2(
 num_servicio number(10, 0) not null,
@@ -48,7 +48,7 @@ diagnostico varchar2(2000) not null,
 factura blob,
 sucursal_id number(10,0) not null,
 constraint ti_servicio_laptop_f2_pk primary key (num_servicio, laptop_id)
-);
+)on commit preserve rows;
 
 create global temporary table ti_servicio_laptop_f3(
 num_servicio number(10, 0) not null,
@@ -58,7 +58,7 @@ diagnostico varchar2(2000) not null,
 factura blob,
 sucursal_id number(10,0) not null,
 constraint ti_servicio_laptop_f3_pk primary key (num_servicio, laptop_id)
-);
+) on commit preserve rows;
 
 
 create global temporary table ti_servicio_laptop_f4(
@@ -69,30 +69,34 @@ diagnostico varchar2(2000) not null,
 factura blob,
 sucursal_id number(10,0) not null,
 constraint ti_servicio_laptop_f4_pk primary key (num_servicio, laptop_id)
-);
+) on commit preserve rows;
 
 
 create global temporary table ts_servicio_laptop_f1(
 num_servicio number(10, 0) not null,
 laptop_id number(10, 0) not null,
-factura blob
-);
+factura blob,
+constraint ts_servicio_laptop_f1_pk primary key (num_servicio, laptop_id)
+) on commit preserve rows;
 
 create global temporary table ts_servicio_laptop_f2(
 num_servicio number(10, 0) not null,
 laptop_id number(10, 0) not null,
-factura blob
-);
+factura blob,
+constraint ts_servicio_laptop_f2_pk primary key (num_servicio, laptop_id)
+) on commit preserve rows;
 
 create global temporary table ts_servicio_laptop_f3(
 num_servicio number(10, 0) not null,
 laptop_id number(10, 0) not null,
-factura blob
-);
+factura blob,
+constraint ts_servicio_laptop_f3_pk primary key (num_servicio, laptop_id)
+) on commit preserve rows;
 
 create global temporary table ts_servicio_laptop_f4(
 num_servicio number(10, 0) not null,
 laptop_id number(10, 0) not null,
-factura blob
-);
+factura blob,
+constraint ts_servicio_laptop_f4_pk primary key (num_servicio, laptop_id)
+) on commit preserve rows;
 

@@ -26,6 +26,7 @@ return v_temp_pdf;
 exception
 when others then
 --si ocurre error, termina la txn autónoma.
+return empty_blob();
 rollback;
 raise;
 end;
@@ -54,9 +55,12 @@ and laptop_id = p_laptop_id;
 --elimina los registros de la tabla temporal
 delete from ts_servicio_laptop_f1;
 --termina txn autónoma
+commit;
+return v_temp_pdf;
 exception
 when others then
 --si ocurre error, termina la txn autónoma.
+return empty_blob();
 rollback;
 raise;
 end;
@@ -86,9 +90,12 @@ and laptop_id = p_laptop_id;
 --elimina los registros de la tabla temporal
 delete from ts_servicio_laptop_f2;
 --termina txn autónoma
+commit;
+return v_temp_pdf;
 exception
 when others then
 --si ocurre error, termina la txn autónoma.
+return empty_blob();
 rollback;
 raise;
 end;
@@ -117,9 +124,12 @@ and laptop_id = p_laptop_id;
 --elimina los registros de la tabla temporal
 delete from ts_servicio_laptop_f3;
 --termina txn autónoma
+commit;
+return v_temp_pdf;
 exception
 when others then
 --si ocurre error, termina la txn autónoma.
+return empty_blob();
 rollback;
 raise;
 end;
@@ -148,9 +158,12 @@ and laptop_id = p_laptop_id;
 --elimina los registros de la tabla temporal
 delete from ts_servicio_laptop_f4;
 --termina txn autónoma
+commit;
+return v_temp_pdf;
 exception
 when others then
 --si ocurre error, termina la txn autónoma.
+return empty_blob();
 rollback;
 raise;
 end;

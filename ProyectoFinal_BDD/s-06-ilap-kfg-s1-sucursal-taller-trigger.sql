@@ -59,7 +59,7 @@ case
         where sucursal_id = :old.sucursal_id;
         --insercion local
         if v_count > 0 then
-            dbms_output.put_line('Insertando en el sitio 01');
+            
             delete from sucursal_taller_f3 where sucursal_id = :old.sucursal_id;
         --insercion remota
         else
