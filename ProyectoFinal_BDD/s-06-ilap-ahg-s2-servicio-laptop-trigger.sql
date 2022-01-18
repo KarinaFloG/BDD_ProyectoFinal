@@ -73,7 +73,6 @@ case
         where sucursal_id = :old.sucursal_id;
         --insercion local
         if v_count > 0 then
-            
             delete from servicio_laptop_f2 where sucursal_id = :old.sucursal_id;
         --insercion remota
         else

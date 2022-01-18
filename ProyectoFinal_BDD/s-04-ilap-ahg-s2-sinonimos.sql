@@ -9,7 +9,7 @@ Prompt Creacion de sinonimos en ahgbdd_s2
 Prompt - - - - - - - - - - - - - - - - - - - - 
 --sucursal
 create or replace synonym sucursal_f1 for sucursal_f1_ahg_s1@ahgbdd_s1;
-create or replace synonym sucursal_f2 for sucursal_f2_ahg_s2@ahgbdd_s2; 
+create or replace synonym sucursal_f2 for sucursal_f2_ahg_s2; 
 create or replace synonym sucursal_f3 for sucursal_f3_kfg_s1@kfgbdd_s1;
 create or replace synonym sucursal_f4 for sucursal_f4_kfg_s2@kfgbdd_s2;
 --sucursal taller
