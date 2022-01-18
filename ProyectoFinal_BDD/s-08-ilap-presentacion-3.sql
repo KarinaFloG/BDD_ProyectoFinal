@@ -26,6 +26,16 @@ Prompt => Realizando limpieza inicial ....
 set feedback off
 Prompt Eliminando datos de historico_status_laptop
 delete from historico_status_laptop;
+Prompt Eliminando datos de sucursal
+delete from sucursal;
+Prompt Eliminando datos de sucursal_taller
+delete from sucursal_taller;
+Prompt Eliminando datos de sucursal_venta
+delete from sucursal_venta;
+Prompt Eliminando datos de servicio_laptop
+delete from servicio_laptop;
+Prompt Eliminando datos de laptop_inventario
+delete from laptop_inventario;
 --completar. Tener cuidado con el orden de eliminación,
 --debe ser eliminación con base a las dependencias de las tablas.
 Prompt => Realizando Carga de datos ....

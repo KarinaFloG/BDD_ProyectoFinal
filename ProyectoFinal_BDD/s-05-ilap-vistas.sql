@@ -1,6 +1,7 @@
 --@Autor: Alejandro Herrera
 --@Fecha creación: 09/01/2022
 --@Descripción: Creación de vistas que no requieren manejo de BLOBs.
+
 --sucursal
 create or replace view sucursal as
 select sucursal_id,clave,es_taller,es_venta,nombre,latitud,longitud,url from sucursal_f1
@@ -70,23 +71,6 @@ select li1.laptop_id, li2.fecha_status, li1.rfc_cliente, li1.num_tarjeta, li1.su
 from laptop_inventario_f1 li1 
 join laptop_inventario_f2 li2 
 on li1.laptop_id = li2.laptop_id;
-
---servicio laptop
-create or replace view servicio_laptop
-select q4.num_servicio, q4.laptop_id, q4.importe, q4.diagnostico, q4.sucursal_id from 
-  (select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f1 sl1 where exists(
-      select 1 from sucursal_f1 s1 where s1.laptop_id = sl1.laptop_id )
-  union all
-    select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f2 sl2 where exists(
-      select 1 from sucursal_f2 s2 where s2.laptop_id = sl2.laptop_id )
-  union all
-    select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f3 sl3 where exists(
-      select 1 from sucursal_f3 s3 where s3.laptop_id = sl3.laptop_id )
-  union all
-    select num_servicio, laptop_id, importe, diagnostico, sucursal_id from servicio_laptop_f4 sl4 where exists(
-      select 1 from sucursal_f4 s4 where s4.laptop_id = sl4.laptop_id )
-  
-) q4;
 
 --Tipo monitor
 create or replace view tipo_monitor as

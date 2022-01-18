@@ -72,7 +72,7 @@ case
         where sucursal_id = :old.sucursal_id;
         -- local
         if v_count > 0 then
-            delete from servicio_laptop_f4 where sucursal_id = :old.sucursal_id;
+            delete from servicio_f4 where sucursal_id = :old.sucursal_id;
         --remota
         else
             select count(*) into v_count
